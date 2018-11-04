@@ -1,4 +1,5 @@
 ![倒计时](https://github.com/boiledwater/count-down/blob/master/images/count-down.png "倒计时")
+
 ### 组件属性
 #### format倒计时显示格式;默认为：{mm}:{s}格式；
 
