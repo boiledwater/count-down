@@ -1,0 +1,7 @@
+<!--components/count-down/index.wxml-->
+<block wx:if='{{!showSlot}}'>
+  <view>{{countDownText}}</view>
+</block>
+<block wx:else>
+  <slot></slot>
+</block>

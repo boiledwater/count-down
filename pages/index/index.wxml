@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<block wx:for='{{data}}' wx:for-item="item">
+  <down expire-time='{{item}}' format='离开始还有 {d}天 {h}时{mm}分{s}秒' />
+  <down expire-time='{{item}}' format='{d}天 {h}:{mm}:{s}' class='red'/>
+</block>
+<down expire-time='{{data[0]}}' show-slot='{{true}}' bind:countDown='onCountDown'>
+  <view class='flex'>
+    离开始:
+    <text class='cycle'>{{day}}</text>天
+    <text class='cycle'>{{hour}}</text>时
+    <text class='cycle'>{{minute}}</text>分
+    <text class='cycle'>{{second}}</text>秒
+  </view>
+</down>

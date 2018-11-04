@@ -1,0 +1,7 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "倒计时",  
+  "usingComponents": {
+    "down": "/components/count-down/index"
+  }
+}

@@ -1,0 +1,21 @@
+.cycle {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  color: white;
+  background: red;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.red {
+  color: red;
+}
