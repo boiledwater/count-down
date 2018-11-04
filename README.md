@@ -28,11 +28,14 @@
 
 ### 使用方式
 #### xx.json文件引用组件
+```json
 {
   "usingComponents": {   
     "down": "/components/count-down/index"
   }
 }
+```
 #### xx.wxml使用组件
-
+```xml
 <down expire-time='{{expire_time}}'/>
+```
