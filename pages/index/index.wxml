@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <block wx:for='{{data}}' wx:for-item="item">
   <down expire-time='{{item}}' format='离开始还有 {d}天 {h}时{mm}分{s}秒' />
-  <down expire-time='{{item}}' format='{d}天 {h}:{mm}:{s}' class='red'/>
+  <down expire-time='{{item}}' format='{d}天 {h}:{mm}:{s}' class='red' bind:expire='onExpire' expire-text='倒计时结束'/>
 </block>
-<down expire-time='{{data[0]}}' show-slot='{{true}}' bind:countDown='onCountDown'>
+<down expire-time='{{data[2]}}' show-slot='{{true}}'  bind:countDown='onCountDown' >
   <view class='flex'>
     离开始:
     <text class='cycle'>{{day}}</text>天

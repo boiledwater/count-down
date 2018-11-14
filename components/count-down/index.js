@@ -70,7 +70,7 @@ Component({
       var myEventOption = {} // 触发事件的选项
       this.triggerEvent('countDown', myEventDetail, myEventOption)
     },
-    onExpireTime: function() {
+    onExpire: function() {
       if (!this.showSlot) {
         this.setData({
           countDownText: this.data.expireText
@@ -80,7 +80,7 @@ Component({
         data: this.data
       } // detail对象，提供给事件监听函数
       var myEventOption = {} // 触发事件的选项
-      this.triggerEvent('expireTime', myEventDetail, myEventOption)
+      this.triggerEvent('expire', myEventDetail, myEventOption)
     },
     checkTime: function(i) {
       if (i < 10) i = "0" + i;
@@ -115,7 +115,7 @@ Component({
           this.onCountDown();
         }
       } else {
-        this.onExpireTime();
+        this.onExpire();
         clearInterval(this.timer);
       }
     },

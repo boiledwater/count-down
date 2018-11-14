@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    data: []
+    data: []    
   },
   onLoad: function() {
     var date1 = new Date();
@@ -18,13 +18,23 @@ Page({
     date3.setDate(37);
     date3.setHours(2, 23, 11);
 
+    var date4 = new Date();
+    date4.setSeconds(date4.getSeconds() + 10);
+
     this.setData({
-      data: [this.format(date1), this.format(date2), this.format(date3)]
+      data: [this.format(date1), this.format(date2), this.format(date3), this.format(date4)],
+      currentDate: this.format(new Date())
     });
+    
   },
   onCountDown: function(e) {
     var down_date = e.detail.data.downDate;
     this.setData(down_date);
+  },
+  onExpire: function() {
+    wx.showToast({
+      title: '倒计时结束'
+    });
   },
   getDate: function(time) {
     /**
