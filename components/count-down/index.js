@@ -107,10 +107,10 @@ Component({
             if (typeof this.__getPage()[format] == 'function') {
               format = this.__getPage()[format](this);
             }
-            _left_time = format.replace('{d}', _day)
-              .replace('{h}', _hour)
-              .replace('{mm}', _minute)
-              .replace('{s}', _second);
+            _left_time = format.replace('{d}', this.data.downDate.day)
+              .replace('{h}', this.data.downDate.hour)
+              .replace('{mm}', this.data.downDate.minute)
+              .replace('{s}', this.data.downDate.second);
             this.setData({
               countDownText: _left_time
             }, () => {});
