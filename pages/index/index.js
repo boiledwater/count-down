@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    data: []    
+    data: []
   },
   onLoad: function() {
     var date1 = new Date();
@@ -25,11 +25,19 @@ Page({
       data: [this.format(date1), this.format(date2), this.format(date3), this.format(date4)],
       currentDate: this.format(new Date())
     });
-    
+
   },
   onCountDown: function(e) {
     var down_date = e.detail.data.downDate;
     this.setData(down_date);
+  },
+  getCountDownFormat: function(count_down_component) {
+    //count_down_component为倒计时控件对象
+    let day = count_down_component.data.downDate.day;
+    if (day > 0 && day % 2 == 0) {
+      return '倒计时: {d}天  {h}:{mm}:{s}';
+    }
+    return '倒计时: {h}:{mm}:{s}';
   },
   onExpire: function() {
     wx.showToast({

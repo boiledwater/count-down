@@ -1,7 +1,8 @@
 ![倒计时](https://github.com/boiledwater/count-down/blob/master/images/count-down.png "倒计时")
 
 ### 组件属性
-#### format倒计时显示格式;默认为：{mm}:{s}格式；
+#### format倒计时显示格式;
+##### 1.字符串类型。默认为：{mm}:{s}格式；
 ```
 {d}：表示天;
 {h}:表示小时;
@@ -11,6 +12,9 @@
 1)距结束 {d}天 {h}时{mm}分{s}秒
 2){d}天 {h}:{mm}:{s}
 ```
+##### 2.function类型;
+在page页面定义有该function。其中function唯一的参数为当前倒计时控件对象;
+
 #### expireText
 过期后显示文本；默认为：已结束
 

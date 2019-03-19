@@ -102,8 +102,12 @@ Component({
         this.data.downDate.second = this.checkTime(_second);
         var _left_time = null;
         if (!this.data.showSlot) {
-          if (this.data.format) {
-            _left_time = this.data.format.replace('{d}', _day)
+          let format = this.data.format;
+          if (format) {
+            if (typeof this.__getPage()[format] == 'function') {
+              format = this.__getPage()[format](this);
+            }
+            _left_time = format.replace('{d}', _day)
               .replace('{h}', _hour)
               .replace('{mm}', _minute)
               .replace('{s}', _second);
@@ -118,6 +122,10 @@ Component({
         this.onExpire();
         clearInterval(this.timer);
       }
+    },
+    __getPage: function() {
+      let pages = getCurrentPages();
+      return pages[pages.length - 1];
     },
     getDate: function(time) {
       /**
