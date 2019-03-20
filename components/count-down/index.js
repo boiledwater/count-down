@@ -54,6 +54,9 @@ Component({
     }
   },
   lifetimes: {
+    attached() {
+      this.data.__page = this.__getPage();
+    },
     detached: function() {
       clearInterval(this.timer);
     },
@@ -124,6 +127,9 @@ Component({
       }
     },
     __getPage: function() {
+      if (this.data.__page) {
+        return this.data.__page;
+      }
       let pages = getCurrentPages();
       return pages[pages.length - 1];
     },
