@@ -33,8 +33,9 @@ Component({
         if (this.timer) {
           clearInterval(this.timer);
         }
+        let end_time = Number(this.getDate(newVal).getTime());
         var f = function() {
-          this.getRightTime(newVal);
+          this.getRightTime(end_time);
         }
         this.timer = setInterval((function(_f, _this) {
           return function() {
@@ -90,7 +91,7 @@ Component({
       return i
     },
     getRightTime: function(_end_time) {
-      var end_time = Number(this.getDate(_end_time).getTime());
+      var end_time = _end_time;
       var now_time = Number(new Date().getTime());
       var diff = end_time - now_time;
       if (diff > 0) {
