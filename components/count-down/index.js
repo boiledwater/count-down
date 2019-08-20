@@ -33,7 +33,13 @@ Component({
         if (this.timer) {
           clearInterval(this.timer);
         }
-        let end_time = Number(this.getDate(newVal).getTime());
+        let time_stamp = null;
+        if (/^\d+$/.test(newVal)) {
+          time_stamp = newVal;
+        } else {
+          time_stamp = this.getDate(newVal).getTime();
+        }
+        let end_time = Number(time_stamp);
         var f = function() {
           this.getRightTime(end_time);
         }

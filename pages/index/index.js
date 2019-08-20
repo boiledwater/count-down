@@ -21,8 +21,11 @@ Page({
     var date4 = new Date();
     date4.setSeconds(date4.getSeconds() + 10);
 
+    var date5 = new Date();
+    date5.setSeconds(date4.getSeconds() + 20);
+
     this.setData({
-      data: [this.format(date1), this.format(date2), this.format(date3), this.format(date4)],
+      data: [this.format(date1), this.format(date2), this.format(date3), this.format(date4),date5.getTime()],
       currentDate: this.format(new Date())
     });
 
